@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AspNet.MVC.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h3 align="center">Popis knjiga</h3>
+
+<p><br /></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Author.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Naslov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrojStranica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GodinaIzdavanja)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naslov)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrojStranica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GodinaIzdavanja)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
